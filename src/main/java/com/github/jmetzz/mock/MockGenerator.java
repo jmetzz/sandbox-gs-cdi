@@ -1,6 +1,7 @@
-package com.github.jmetzz.service;
+package com.github.jmetzz.mock;
 
 
+import com.github.jmetzz.service.NumberGenerator;
 import com.github.jmetzz.service.annotations.Loggable;
 import com.github.jmetzz.service.annotations.ThirteenDigits;
 
