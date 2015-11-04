@@ -4,13 +4,8 @@
        http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd"
        version="1.1" bean-discovery-mode="all">
 
-
-    <alternatives>
-        <class>com.github.jmetzz.service.MockGenerator</class>
-    </alternatives>
-
-    <!--<interceptors>-->
-    <!--<class>com.github.jmetzz.service.interceptors.LoggingInterceptor</class>-->
-    <!--</interceptors>-->
-
+    <!---->
+    <!--<alternatives>-->
+    <!--<class>com.github.jmetzz.service.MockGenerator</class>-->
+    <!--</alternatives>-->
 </beans>
