@@ -1,5 +1,6 @@
 package com.github.jmetzz.service;
 
+import com.github.jmetzz.mock.MockGenerator;
 import com.github.jmetzz.pojo.Book;
 import com.github.jmetzz.service.interceptors.LoggingInterceptor;
 import org.jboss.weld.environment.se.Weld;
