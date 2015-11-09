@@ -1,8 +1,8 @@
 package com.github.jmetzz;
 
-import com.github.jmetzz.pojo.Book;
-import com.github.jmetzz.service.BookService;
-import com.github.jmetzz.service.mock.MockGenerator;
+import com.github.jmetzz.cdi.pojo.Book;
+import com.github.jmetzz.cdi.service.BookService;
+import com.github.jmetzz.cdi.service.mock.MockGenerator;
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
 import org.junit.Test;

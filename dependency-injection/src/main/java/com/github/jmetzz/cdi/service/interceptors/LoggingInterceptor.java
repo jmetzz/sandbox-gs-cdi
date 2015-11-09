@@ -1,7 +1,7 @@
-package com.github.jmetzz.service.interceptors;
+package com.github.jmetzz.cdi.service.interceptors;
 
 
-import com.github.jmetzz.service.annotations.Loggable;
+import com.github.jmetzz.cdi.service.annotations.Loggable;
 
 import javax.inject.Inject;
 import javax.interceptor.AroundConstruct;

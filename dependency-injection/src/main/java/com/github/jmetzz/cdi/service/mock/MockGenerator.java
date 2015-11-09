@@ -1,9 +1,9 @@
-package com.github.jmetzz.service.mock;
+package com.github.jmetzz.cdi.service.mock;
 
 
-import com.github.jmetzz.service.annotations.Loggable;
-import com.github.jmetzz.service.annotations.ThirteenDigits;
-import com.github.jmetzz.service.generators.NumberGenerator;
+import com.github.jmetzz.cdi.service.annotations.Loggable;
+import com.github.jmetzz.cdi.service.annotations.ThirteenDigits;
+import com.github.jmetzz.cdi.service.generators.NumberGenerator;
 
 import javax.enterprise.inject.Alternative;
 import javax.inject.Inject;

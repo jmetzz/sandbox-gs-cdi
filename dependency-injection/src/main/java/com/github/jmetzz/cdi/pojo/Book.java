@@ -1,4 +1,4 @@
-package com.github.jmetzz.pojo;
+package com.github.jmetzz.cdi.pojo;
 
 /**
  * Created by Jean Metz on 12-Oct-15.
@@ -62,4 +62,6 @@ public class Book {
                 ", number='" + number + '\'' +
                 '}';
     }
+
+
 }

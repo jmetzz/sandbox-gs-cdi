@@ -6,13 +6,13 @@
 
     <alternatives>
         <class>
-            com.github.jmetzz.service.mock.MockGenerator
+            com.github.jmetzz.cdi.service.mock.MockGenerator
         </class>
     </alternatives>
 
     <interceptors>
         <class>
-            com.github.jmetzz.service.interceptors.LoggingInterceptor
+            com.github.jmetzz.cdi.service.interceptors.LoggingInterceptor
         </class>
     </interceptors>
 

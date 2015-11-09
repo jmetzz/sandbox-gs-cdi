@@ -1,8 +1,8 @@
-package com.github.jmetzz.service.producers;
+package com.github.jmetzz.cdi.service.producers;
 
 
-import com.github.jmetzz.service.annotations.Rand;
-import com.github.jmetzz.service.annotations.ThirteenDigits;
+import com.github.jmetzz.cdi.service.annotations.Rand;
+import com.github.jmetzz.cdi.service.annotations.ThirteenDigits;
 
 import javax.enterprise.inject.Produces;
 import java.util.Random;

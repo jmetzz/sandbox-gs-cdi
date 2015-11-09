@@ -1,8 +1,8 @@
-package com.github.jmetzz.service.generators;
+package com.github.jmetzz.cdi.service.generators;
 
 
-import com.github.jmetzz.service.annotations.EightDigits;
-import com.github.jmetzz.service.annotations.Loggable;
+import com.github.jmetzz.cdi.service.annotations.EightDigits;
+import com.github.jmetzz.cdi.service.annotations.Loggable;
 
 import javax.inject.Inject;
 import java.util.Random;

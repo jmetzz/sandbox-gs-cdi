@@ -1,4 +1,4 @@
-package com.github.jmetzz.service.annotations;
+package com.github.jmetzz.cdi.service.annotations;
 
 import javax.inject.Qualifier;
 import java.lang.annotation.Retention;
@@ -13,5 +13,5 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Qualifier
 @Retention(RUNTIME)
 @Target({FIELD, TYPE, METHOD})
-public @interface ThirteenDigits {
+public @interface EightDigits {
 }
