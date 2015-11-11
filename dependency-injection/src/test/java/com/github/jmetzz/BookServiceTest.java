@@ -2,7 +2,6 @@ package com.github.jmetzz;
 
 import com.github.jmetzz.cdi.pojo.Book;
 import com.github.jmetzz.cdi.service.BookService;
-import com.github.jmetzz.cdi.service.mock.MockGenerator;
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
 import org.junit.Test;
@@ -17,7 +16,7 @@ public class BookServiceTest {
     @Test
     public void shouldCheckNumberIsMock() {
 
-        Weld builder = new Weld().addAlternative(MockGenerator.class);
+        Weld builder = new Weld();
 
         try (WeldContainer weld = builder.initialize()) {
             BookService service = weld.select(BookService.class).get();

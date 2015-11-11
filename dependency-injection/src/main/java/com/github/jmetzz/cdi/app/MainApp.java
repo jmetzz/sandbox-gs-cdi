@@ -13,8 +13,6 @@ public class MainApp {
 
     public static void main(String[] args) {
 
-        System.out.println(" Main App Started ... ");
-
         Weld weld = new Weld();
 
         try (WeldContainer container = weld.initialize()) {
@@ -22,7 +20,6 @@ public class MainApp {
             Book book = service.createBook("Weld CDI", 50.0, "Context and dependency injection with WELD");
             System.out.println(book);
         }
-        System.out.println("===== END =======");
 
     }
 
