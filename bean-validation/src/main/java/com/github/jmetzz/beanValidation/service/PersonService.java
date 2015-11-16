@@ -17,7 +17,7 @@ public class PersonService {
                 .withMidleName("Rachel")
                 .withFamilyName("Lucca")
                 .withBirthDate(new DateTime().withDate(1971, 10, 18))
-                .withSsNumber("123456789012345").build();
+                .withSsNumber("123456789012345").createPerson();
     }
 
 

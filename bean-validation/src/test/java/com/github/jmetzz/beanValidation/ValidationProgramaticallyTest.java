@@ -39,11 +39,11 @@ public class ValidationProgramaticallyTest {
     public void validateComplete() {
 
         Person person = new PersonBuilder()
-                .withFirstName("Thais")
-                .withMidleName("Rachel")
-                .withFamilyName("Lucca")
+                .withFirstName("Isaac")
+                .withMidleName("the Tongue")
+                .withFamilyName("Newton")
                 .withBirthDate(new DateTime().withDate(1971, 10, 18))
-                .withSsNumber("123456789012345").build();
+                .withSsNumber("123456789012345").createPerson();
 
         Set<ConstraintViolation<Person>> violations = validator.validate(person);
         assertThat(violations.size()).isEqualTo(0);
@@ -53,10 +53,10 @@ public class ValidationProgramaticallyTest {
     @Test
     public void validateNotComplete() {
         Person person = new PersonBuilder()
-                .withFirstName("Thais")
-                .withMidleName("Rachel")
+                .withFirstName("Isaac")
+                .withMidleName("the Tongue")
                 .withBirthDate(new DateTime().withDate(1971, 10, 18))
-                .withSsNumber("123456789012345").build();
+                .withSsNumber("123456789012345").createPerson();
 
         Set<ConstraintViolation<Person>> violations = validator.validate(person);
         assertThat(violations.size()).isEqualTo(1);

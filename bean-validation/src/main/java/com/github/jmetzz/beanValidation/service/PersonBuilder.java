@@ -8,7 +8,10 @@ public class PersonBuilder {
     private String familyName;
     private String midleName;
     private DateTime birthDate;
+    private String phoneNumber;
     private String ssNumber;
+    private String email;
+    private String website;
 
     public PersonBuilder withFirstName(String firstName) {
         this.firstName = firstName;
@@ -35,7 +38,22 @@ public class PersonBuilder {
         return this;
     }
 
-    public Person build() {
-        return new Person(firstName, familyName, midleName, birthDate, ssNumber);
+    public PersonBuilder withPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+        return this;
+    }
+
+    public PersonBuilder withEmail(String email) {
+        this.email = email;
+        return this;
+    }
+
+    public PersonBuilder withWebSite(String website) {
+        this.website = website;
+        return this;
+    }
+
+    public Person createPerson() {
+        return new Person(firstName, familyName, midleName, birthDate, ssNumber, phoneNumber, email, website);
     }
 }
