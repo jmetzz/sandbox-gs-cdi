@@ -5,7 +5,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.jmetzz.sandbox-gs-cdi</groupId>
+    <groupId>com.github.jmetzz.sandbox-gs-jee</groupId>
     <artifactId>dependency-injection</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
@@ -16,7 +16,7 @@
 
     <parent>
         <groupId>com.github.jmetzz</groupId>
-        <artifactId>sandbox-gs-cdi</artifactId>
+        <artifactId>sandbox-gs-jee</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 

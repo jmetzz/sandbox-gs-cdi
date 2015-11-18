@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.jmetzz</groupId>
-    <artifactId>sandbox-gs-cdi</artifactId>
-    <name>gs-cdi-multimodule</name>
+    <artifactId>sandbox-gs-jee</artifactId>
+    <name>gs-jee-multimodule</name>
 
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
@@ -14,6 +14,7 @@
     <modules>
         <module>dependency-injection</module>
         <module>bean-validation</module>
+        <module>timer-scheduler</module>
     </modules>
 
     <properties>
