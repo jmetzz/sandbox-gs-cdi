@@ -15,6 +15,7 @@
         <module>dependency-injection</module>
         <module>bean-validation</module>
         <module>timer-scheduler</module>
+        <module>jpa-persistence</module>
     </modules>
 
     <properties>
@@ -54,7 +55,7 @@
         <version.maven.jar.plugin>2.4</version.maven.jar.plugin>
         <version.maven.war.plugin>2.4</version.maven.war.plugin>
         <version.maven.processor.plugin>2.2.4</version.maven.processor.plugin>
-        <version.maven.compiler.plugin>3.3</version.maven.compiler.plugin>
+        <version.maven.compiler.plugin>3.1</version.maven.compiler.plugin>
         <version.maven.dependency.plugin>2.8</version.maven.dependency.plugin>
         <version.maven.help.plugin>2.2</version.maven.help.plugin>
         <version.maven.exec.plugin>1.4.0</version.maven.exec.plugin>
@@ -106,37 +107,39 @@
             <!--<version>${version.el}</version>-->
             <!--</dependency>-->
 
-            <!-- JPA -->
-            <!--<dependency>-->
-            <!--<groupId>org.eclipse.persistence</groupId>-->
-            <!--<artifactId>org.eclipse.persistence.jpa</artifactId>-->
-            <!--<version>${version.eclipselink}</version>-->
-            <!--</dependency>-->
-            <!--<dependency>-->
-            <!--<groupId>org.eclipse.persistence</groupId>-->
-            <!--<artifactId>org.eclipse.persistence.jpa.modelgen.processor</artifactId>-->
-            <!--<version>${version.eclipselink}</version>-->
-            <!--</dependency>-->
+            <!-- JPA-->
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>org.eclipse.persistence.jpa</artifactId>
+                <version>${version.eclipselink}</version>
+            </dependency>
 
-            <!-- Derby -->
-            <!--<dependency>-->
-            <!--<groupId>org.apache.derby</groupId>-->
-            <!--<artifactId>derby</artifactId>-->
-            <!--<version>${version.derby}</version>-->
-            <!--<scope>test</scope>-->
-            <!--</dependency>-->
-            <!--<dependency>-->
-            <!--<groupId>org.apache.derby</groupId>-->
-            <!--<artifactId>derbyclient</artifactId>-->
-            <!--<version>${version.derby}</version>-->
-            <!--</dependency>-->
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>org.eclipse.persistence.jpa.modelgen.processor</artifactId>
+                <version>${version.eclipselink}</version>
+            </dependency>
 
-            <!-- MySQL -->
-            <!--<dependency>-->
-            <!--<groupId>mysql</groupId>-->
-            <!--<artifactId>mysql-connector-java</artifactId>-->
-            <!--<version>${version.mysql}</version>-->
-            <!--</dependency>-->
+            <!--Derby-->
+            <dependency>
+                <groupId>org.apache.derby</groupId>
+                <artifactId>derby</artifactId>
+                <version>${version.derby}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.derby</groupId>
+                <artifactId>derbyclient</artifactId>
+                <version>${version.derby}</version>
+            </dependency>
+
+            <!--MySQL-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${version.mysql}</version>
+            </dependency>
 
             <!-- JSOn-P -->
             <!--<dependency>-->
