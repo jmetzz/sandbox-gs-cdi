@@ -1,5 +1,7 @@
 package com.github.jmetzz.cdi.pojo;
 
+import com.google.common.base.MoreObjects;
+
 /**
  * Created by Jean Metz on 12-Oct-15.
  */
@@ -55,12 +57,13 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
-                "title='" + title + '\'' +
-                ", price=" + price +
-                ", description='" + description + '\'' +
-                ", number='" + number + '\'' +
-                '}';
+        return MoreObjects.toStringHelper(this)
+                .add("Title", title)
+                .add("Price", price)
+                .add("Description", description)
+                .add("ISSN", number)
+                .omitNullValues()
+                .toString();
     }
 
 
