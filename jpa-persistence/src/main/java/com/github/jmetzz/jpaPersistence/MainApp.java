@@ -16,7 +16,7 @@ public class MainApp {
         Book book = new Book();
         book.setTitle("My Book");
         book.setDescription("A small description of My Book");
-        book.setNumber("1-84023-742-2");
+        book.setIsbn("1-84023-742-2");
         book.setNumberOfPages(300);
         book.setPrice(50.0);
 

@@ -23,22 +23,25 @@ public class Book {
 
     @NotNull
     private String title;
+
     private Double price;
 
     @Size(min = 10, max = 2000)
     private String description;
-    private String number;
+
+    private String isbn;
+
+    @Column(name = "NBOFPAGE")
     private Integer numberOfPages;
 
     public Book() {
     }
 
-
     public Book(String title, String description, Double price, String number, Integer numberOfPages) {
         this.title = title;
         this.price = price;
         this.description = description;
-        this.number = number;
+        this.isbn = number;
         this.numberOfPages = numberOfPages;
     }
 
@@ -74,12 +77,12 @@ public class Book {
         this.description = description;
     }
 
-    public String getNumber() {
-        return number;
+    public String getIsbn() {
+        return isbn;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 
     public Integer getNumberOfPages() {
@@ -93,10 +96,11 @@ public class Book {
     @Override
     public String toString() {
         return MoreObjects.toStringHelper(this)
+                .add("Id", id)
                 .add("Title", title)
                 .add("Price", price)
                 .add("Description", description)
-                .add("ISSN", number)
+                .add("ISSN", isbn)
                 .add("Number of pages", numberOfPages)
                 .omitNullValues()
                 .toString();

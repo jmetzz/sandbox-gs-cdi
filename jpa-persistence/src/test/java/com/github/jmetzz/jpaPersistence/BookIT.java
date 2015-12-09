@@ -1,6 +1,7 @@
 package com.github.jmetzz.jpaPersistence;
 
 import com.github.jmetzz.jpaPersistence.pojo.Book;
+import org.jboss.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,6 +11,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.validation.ConstraintViolationException;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -17,6 +19,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Created by Jean Metz.
  */
 public class BookIT {
+
+    Logger logger = Logger.getLogger(BookIT.class);
 
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("SimpleJPAExampleUnitTests");
 
@@ -33,7 +37,6 @@ public class BookIT {
 
     @After
     public void tearDown() {
-
         if (em != null) {
             em.close();
         }
@@ -43,29 +46,36 @@ public class BookIT {
     public void shouldFindJavaEE7Book() throws Exception {
         Book book = em.find(Book.class, 1001L);
         assertThat("Beginning Java EE 7").isEqualTo(book.getTitle());
+
+        logger.info("Find result: " + book);
     }
 
     @Test
-    public void shouldCreateH2G2Book() throws Exception {
+    public void shouldCreateMyBook() throws Exception {
+        Book book = new Book("My Book", "My Book description", 12.5, "1-84023-742-2", 354);
 
-        // Creates an instance of book
-        Book book = new Book("H2G2", "The Hitchhiker's Guide to the Galaxy", 12.5, "1-84023-742-2", 354);
+        logger.info("Book instance created: " + book);
 
-        // Persists the book to the database
         tx.begin();
         em.persist(book);
         tx.commit();
         assertThat(book.getId()).isNotNull();
 
-        // Retrieves all the books from the database
-        book = em.createNamedQuery("findBookH2G2", Book.class).getSingleResult();
-        assertThat(book.getDescription()).isEqualTo("The Hitchhiker's Guide to the Galaxy");
+        logger.info("Book instance persisted: " + book);
+    }
+
+    @Test
+    public void shouldRetrieveAllBooks() {
+        List<Book> books = em.createNamedQuery("findAllBooks", Book.class).getResultList();
+        assertThat(books.size()).isEqualTo(4);
+        logger.info("Find all books: " + books);
     }
 
     @Test(expected = ConstraintViolationException.class)
     public void shouldRaiseConstraintViolationCauseNullTitle() {
-
         Book book = new Book(null, "Null title, should fail", 12.5, "1-84023-742-2", 354);
+        logger.info("Book with null title created. Should fail this test with ConstraintViolationException");
+
         em.persist(book);
     }
 

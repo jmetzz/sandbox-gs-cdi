@@ -90,7 +90,6 @@ gradle-app.setting
 ### Eclipse ###
 *.pydevproject
 .metadata
-.gradle
 bin/
 tmp/
 *.tmp
@@ -127,3 +126,7 @@ local.properties
 
 # TeXlipse plugin
 .texlipse
+
+
+# Log files
+*.log
