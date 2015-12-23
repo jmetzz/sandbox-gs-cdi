@@ -1,4 +1,5 @@
-package com.github.jmetzz.jpaPersistence.pojo;
+package com.github.jmetzz.jpaPersistence.firstSteps.pojo;
+
 
 import com.google.common.base.MoreObjects;
 

@@ -7,7 +7,7 @@
 
     <persistence-unit name="SimpleJPAExample" transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-        <class>com.github.jmetzz.jpaPersistence.pojo.Book</class>
+        <class>com.github.jmetzz.jpaPersistence.firstSteps.pojo.Book</class>
         <properties>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
             <property name="javax.persistence.schema-generation.scripts.action" value="drop-and-create"/>
@@ -39,7 +39,7 @@
 
     <persistence-unit name="SimpleJPAExampleUnitTests" transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-        <class>com.github.jmetzz.jpaPersistence.pojo.Book</class>
+        <class>com.github.jmetzz.jpaPersistence.firstSteps.pojo.Book</class>
         <properties>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
             <property name="javax.persistence.schema-generation.scripts.action" value="drop-and-create"/>

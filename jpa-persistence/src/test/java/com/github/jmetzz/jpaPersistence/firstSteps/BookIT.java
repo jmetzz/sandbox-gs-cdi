@@ -1,6 +1,6 @@
-package com.github.jmetzz.jpaPersistence;
+package com.github.jmetzz.jpaPersistence.firstSteps;
 
-import com.github.jmetzz.jpaPersistence.pojo.Book;
+import com.github.jmetzz.jpaPersistence.firstSteps.pojo.Book;
 import org.jboss.logging.Logger;
 import org.junit.After;
 import org.junit.Before;

@@ -1,6 +1,6 @@
-package com.github.jmetzz.jpaPersistence;
+package com.github.jmetzz.jpaPersistence.firstSteps;
 
-import com.github.jmetzz.jpaPersistence.pojo.Book;
+import com.github.jmetzz.jpaPersistence.firstSteps.pojo.Book;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
