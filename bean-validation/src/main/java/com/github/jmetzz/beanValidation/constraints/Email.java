@@ -28,8 +28,8 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Retention(RUNTIME)
 @Documented
 public @interface Email {
-    //    String message() default "{com.github.jmetzz.beanValidation.constraints.Email.message}";
-    String message() default "Invalid email format";
+    String message() default "{com.github.jmetzz.beanValidation.constraints.Email.message}";
+    //String message() default "Invalid email format";
 
     Class<?>[] groups() default {};
 

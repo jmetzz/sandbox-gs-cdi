@@ -13,7 +13,8 @@ import javax.validation.constraints.Size;
 
 @NamedQueries({
         @NamedQuery(name = "findAllBooks", query = "SELECT b FROM Book b"),
-        @NamedQuery(name = "findMyBook", query = "SELECT b FROM Book b WHERE b.title ='My Book'")
+        @NamedQuery(name = "findMyBook", query = "SELECT b FROM Book b WHERE b.title ='My Book'"),
+        @NamedQuery(name = "findTitles", query = "SELECT b.title FROM Book")
 })
 @Entity
 public class Book {

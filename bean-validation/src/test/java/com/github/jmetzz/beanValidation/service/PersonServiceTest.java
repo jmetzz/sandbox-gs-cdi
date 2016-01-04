@@ -3,6 +3,7 @@ package com.github.jmetzz.beanValidation.service;
 import com.github.jmetzz.beanValidation.pojo.Person;
 import org.joda.time.DateTime;
 import org.junit.AfterClass;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -22,6 +23,8 @@ public class PersonServiceTest {
 
     private static Validator validator;
 
+    private Person person;
+
     @BeforeClass
     public static void init() {
         vf = Validation.buildDefaultValidatorFactory();
@@ -33,41 +36,188 @@ public class PersonServiceTest {
         vf.close();
     }
 
-    @Test
-    public void shouldRaiseNoConstraintViolation() {
 
-        Person person = new PersonBuilder()
+    @Before
+    public void setup() {
+        person = new PersonBuilder()
                 .withFirstName("Isaac")
+                .withMidleName("TONGE")
                 .withFamilyName("Newton")
                 .withSsNumber("123456789012345")
                 .withEmail("the-tongue@newton.me")
                 .withBirthDate(new DateTime().withDate(1642, 12, 25))
                 .withPhoneNumber("34567984874")
+                .withWebSite("http://www.thetonge.newtow.me")
                 .createPerson();
+    }
 
+    @Test
+    public void shouldValidate() {
         Set<ConstraintViolation<Person>> violations = validator.validate(person);
         assertEquals(0, violations.size());
+    }
 
+
+    @Test
+    public void shouldFailBecauseFirstNameTooShort() {
+        Person p = new PersonBuilder()
+                .from(person)
+                .withFirstName("N")
+                .createPerson();
+
+        Set<ConstraintViolation<Person>> violations = validator.validate(p);
+
+        assertEquals(1, violations.size());
+    }
+
+    @Test
+    public void shouldFailBecauseFirstNameTooLong() {
+        Person p = new PersonBuilder()
+                .from(person)
+                .withFirstName("NewtonNewtonNewtonNewtonNewtonNewtonNewtonNewtonNewtonNewton")
+                .createPerson();
+
+        Set<ConstraintViolation<Person>> violations = validator.validate(p);
+        System.out.println(violations);
+        assertEquals(1, violations.size());
 
     }
 
     @Test
-    public void shouldRaiseConstraintViolationCauseInvalidEmail() {
-
-        Person person = new PersonBuilder()
-                .withFirstName("Isaac")
-                .withFamilyName("Newton")
-                .withSsNumber("123456789012345")
-                .withEmail("wrong-email-address")
-                .withBirthDate(new DateTime().withDate(1642, 12, 25))
-                .withPhoneNumber("34567984874")
+    public void shouldFailBecauseFirstNameNull() {
+        Person p = new PersonBuilder()
+                .from(person)
+                .withFirstName(null)
                 .createPerson();
 
-        Set<ConstraintViolation<Person>> violations = validator.validate(person);
+        Set<ConstraintViolation<Person>> violations = validator.validate(p);
+        System.out.println(violations);
+
         assertEquals(1, violations.size());
-        assertEquals("Email address not valid", violations.iterator().next().getMessage());
-        assertEquals("wrong-email-address", violations.iterator().next().getInvalidValue());
-        assertEquals("{com.github.jmetzz.beanValidation.constraints.Email.message}",
-                violations.iterator().next().getMessageTemplate());
     }
+
+    public void shouldFailBecauseFamilyNameTooShort() {
+        Person p = new PersonBuilder()
+                .from(person)
+                .withFamilyName("T")
+                .createPerson();
+
+        Set<ConstraintViolation<Person>> violations = validator.validate(p);
+        System.out.println(violations);
+
+        assertEquals(1, violations.size());
+    }
+
+    public void shouldFailBecauseFamilyNameTooLong() {
+        Person p = new PersonBuilder()
+                .from(person)
+                .withFamilyName("NewtonNewtonNewtonNewtonNewtonNewtonNewtonNewtonNewtonNewton")
+                .createPerson();
+
+        Set<ConstraintViolation<Person>> violations = validator.validate(p);
+        System.out.println(violations);
+        assertEquals(1, violations.size());
+    }
+
+    public void shouldFailBecauseFamilyNameNull() {
+        Person p = new PersonBuilder()
+                .from(person)
+                .withFirstName(null)
+                .createPerson();
+
+        Set<ConstraintViolation<Person>> violations = validator.validate(p);
+        System.out.println(violations);
+
+        assertEquals(1, violations.size());
+    }
+
+    public void shouldFailBecauseMiddleNameTooLong() {
+        Person p = new PersonBuilder()
+                .from(person)
+                .withMidleName("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" +
+                        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" +
+                        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" +
+                        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" +
+                        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" +
+                        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" +
+                        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" +
+                        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" +
+                        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" +
+                        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+                .createPerson();
+
+        Set<ConstraintViolation<Person>> violations = validator.validate(p);
+        System.out.println(violations);
+
+        assertEquals(1, violations.size());
+    }
+
+
+    public void shouldFailBecauseBirthDateNull() {
+        Person p = new PersonBuilder()
+                .from(person)
+                .withBirthDate(null)
+                .createPerson();
+
+        Set<ConstraintViolation<Person>> violations = validator.validate(p);
+        System.out.println(violations);
+
+        assertEquals(1, violations.size());
+    }
+
+    public void shouldFailBecauseBirthDateIsFuture() {
+        Person p = new PersonBuilder()
+                .from(person)
+                .withBirthDate(new DateTime().withDate(2642, 12, 25))
+                .createPerson();
+
+        Set<ConstraintViolation<Person>> violations = validator.validate(p);
+        System.out.println(violations);
+
+        assertEquals(1, violations.size());
+    }
+
+    public void shouldFailBecauseSsNumberWrongSize() {
+        Person p = new PersonBuilder()
+                .from(person)
+                .withSsNumber("12345678")
+                .createPerson();
+
+        Set<ConstraintViolation<Person>> violations = validator.validate(p);
+        System.out.println(violations);
+
+        assertEquals(1, violations.size());
+    }
+
+    @Test
+    public void shouldFailBecauseInvalidEmail() {
+
+        Person p = new PersonBuilder()
+                .from(person)
+                .withEmail("wrong-email-address")
+                .createPerson();
+
+        Set<ConstraintViolation<Person>> violations = validator.validate(p);
+        System.out.println(violations);
+
+        assertEquals(1, violations.size());
+
+        ConstraintViolation<Person> violation = violations.iterator().next();
+        assertEquals("Invalid email format", violation.getMessage());
+        assertEquals("wrong-email-address", violation.getInvalidValue());
+    }
+
+    public void shouldFailBecauseInvalidURL() {
+        Person p = new PersonBuilder()
+                .from(person)
+                .withWebSite("www.thetonge.newtow.me")
+                .createPerson();
+
+        Set<ConstraintViolation<Person>> violations = validator.validate(p);
+        System.out.println(violations);
+
+        assertEquals(1, violations.size());
+    }
+
+
 }

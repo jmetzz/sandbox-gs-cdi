@@ -3,6 +3,8 @@ package com.github.jmetzz.beanValidation.service;
 import com.github.jmetzz.beanValidation.pojo.Person;
 import org.joda.time.DateTime;
 
+import static org.jboss.weld.util.Preconditions.checkNotNull;
+
 public class PersonBuilder {
     private String firstName;
     private String familyName;
@@ -50,6 +52,19 @@ public class PersonBuilder {
 
     public PersonBuilder withWebSite(String website) {
         this.website = website;
+        return this;
+    }
+
+    public PersonBuilder from(Person p) {
+        checkNotNull(p);
+        this.firstName = p.getFirstName();
+        this.midleName = p.getMiddleName();
+        this.familyName = p.getFamilyName();
+        this.phoneNumber = p.getPhoneNumber();
+        this.birthDate = p.getBirthDate();
+        this.email = p.getEmail();
+        this.ssNumber = p.getSsNumber();
+        this.website = p.getWebsite();
         return this;
     }
 

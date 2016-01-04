@@ -37,6 +37,10 @@ public class MainApp {
 
         System.out.println(bookList);
 
+
+        List<String> titleList = em.createNamedQuery("findTitles", String.class).getResultList();
+
+        System.out.println(bookList);
         em.close();
         emf.close();
 

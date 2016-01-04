@@ -22,11 +22,12 @@
         <!-- General -->
         <version.java>1.8</version.java>
         <version.guava>19.0-rc2</version.guava>
+        <version.joda>2.9.1</version.joda>
 
         <!-- Java EE -->
         <version.javaee>7.0</version.javaee>
         <version.weld>3.0.0.Alpha8</version.weld> <!--<version.weld>2.0.1.Final</version.weld>-->
-        <version.hibernate.validator>5.0.1.Final</version.hibernate.validator>
+        <version.hibernate.validator>5.2.2.Final</version.hibernate.validator>
         <version.glassfish>4.0</version.glassfish>
         <version.jersey>2.3.1</version.jersey>
         <version.eclipselink>2.5.1</version.eclipselink>
@@ -224,6 +225,12 @@
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${version.guava}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>${version.joda}</version>
             </dependency>
 
         </dependencies>

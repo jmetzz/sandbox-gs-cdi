@@ -1,12 +1,12 @@
 package com.github.jmetzz.beanValidation;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
  * Created by Jean Metz on 11-Nov-15.
  */
 public class ValidationJNDITest {
-
 
 /*
     If your application runs in a Java EE container, then the container must make the following instances available
@@ -17,9 +17,9 @@ public class ValidationJNDITest {
 */
 
     @Test
+    @Ignore
     public void validate() {
-
-
+        // TODO
     }
 
 
