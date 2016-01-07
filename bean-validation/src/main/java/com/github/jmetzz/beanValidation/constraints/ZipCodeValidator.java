@@ -11,8 +11,9 @@ import java.util.regex.Pattern;
  */
 public class ZipCodeValidator implements ConstraintValidator<ZipCode, String> {
 
-    @Inject
+
     @USA
+    @Inject
     private ZipCodeChecker checker;
 
     private Pattern zipPattern = Pattern.compile("\\d{5}(-\\d{5})?");
@@ -27,10 +28,12 @@ public class ZipCodeValidator implements ConstraintValidator<ZipCode, String> {
         if (code == null)
             return true;
 
+        // first step check -> regular expression based
         Matcher m = zipPattern.matcher(code);
         if (!m.matches())
             return false;
 
+        // second step check -> business logic validation
         return checker.isZipCodeValid(code);
     }
 }

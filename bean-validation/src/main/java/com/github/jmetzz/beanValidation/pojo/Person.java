@@ -19,14 +19,14 @@ import java.util.List;
 public class Person {
 
     @NotNull
-    @Size(min = 2, max = 50)
+    @Size(min = 2, max = 30)
     private final String firstName;
 
     @NotNull
     @Size(min = 2, max = 30)
     private final String familyName;
 
-    @Size(max = 255)
+    @Size(max = 100)
     private final String middleName;
 
     @NotNull

@@ -41,23 +41,19 @@ public class URLValidator implements ConstraintValidator<URL, String> {
         // Checks if the protocol attribute has a valid value
         if (protocol != null && protocol.length() > 0 && !url.getProtocol().equals(protocol)) {
             context.disableDefaultConstraintViolation();
-//            context.buildConstraintViolationWithTemplate("{com.github.jmetzz.beanValidation.constraints.URL.protocol.message}").addConstraintViolation()
-            context.buildConstraintViolationWithTemplate("Invalid protocol")
-                    .addConstraintViolation();
+            context.buildConstraintViolationWithTemplate("{com.github.jmetzz.beanValidation.constraints.URL.protocol.message}").addConstraintViolation();
             return false;
         }
 
         if (host != null && host.length() > 0 && !url.getHost().startsWith(host)) {
             context.disableDefaultConstraintViolation();
-//            context.buildConstraintViolationWithTemplate("{com.github.jmetzz.beanValidation.constraints.URL.host.message}").addConstraintViolation();
-            context.buildConstraintViolationWithTemplate("Invalid host").addConstraintViolation();
+            context.buildConstraintViolationWithTemplate("{com.github.jmetzz.beanValidation.constraints.URL.host.message}").addConstraintViolation();
             return false;
         }
 
         if (port != -1 && url.getPort() != port) {
             context.disableDefaultConstraintViolation();
-//            context.buildConstraintViolationWithTemplate("{com.github.jmetzz.beanValidation.constraints.URL.port.message}").addConstraintViolation();
-            context.buildConstraintViolationWithTemplate("Invalid port").addConstraintViolation();
+            context.buildConstraintViolationWithTemplate("{com.github.jmetzz.beanValidation.constraints.URL.port.message}").addConstraintViolation();
             return false;
         }
 

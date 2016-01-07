@@ -1,8 +1,5 @@
 package com.github.jmetzz.beanValidation;
 
-import org.junit.Ignore;
-import org.junit.Test;
-
 /**
  * Created by Jean Metz on 11-Nov-15.
  */
@@ -16,8 +13,6 @@ public class ValidationJNDITest {
     Then you can look up these JNDI names and get an instance of Validator
 */
 
-    @Test
-    @Ignore
     public void validate() {
         // TODO
     }

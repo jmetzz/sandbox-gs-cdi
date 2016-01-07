@@ -20,8 +20,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Retention(RUNTIME)
 @Documented
 public @interface ExactSize {
-    String message() default "Invalid size";
-//    String message() default "{com.github.jmetzz.beanValidation.constraints.ExactSize.message}";
+    String message() default "{com.github.jmetzz.beanValidation.constraints.ExactSize.message}";
 
     Class<?>[] groups() default {};
 

@@ -17,7 +17,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Retention(RUNTIME)
 public @interface URL {
 
-    String message() default "Malformed URL";
+    String message() default "{com.github.jmetzz.beanValidation.constraints.URL.message}";
 
     Class<?>[] groups() default {};
 

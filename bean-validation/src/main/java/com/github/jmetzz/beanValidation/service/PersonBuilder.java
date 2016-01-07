@@ -3,7 +3,7 @@ package com.github.jmetzz.beanValidation.service;
 import com.github.jmetzz.beanValidation.pojo.Person;
 import org.joda.time.DateTime;
 
-import static org.jboss.weld.util.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 public class PersonBuilder {
     private String firstName;

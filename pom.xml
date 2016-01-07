@@ -27,7 +27,8 @@
         <!-- Java EE -->
         <version.javaee>7.0</version.javaee>
         <version.weld>3.0.0.Alpha8</version.weld> <!--<version.weld>2.0.1.Final</version.weld>-->
-        <version.hibernate.validator>5.2.2.Final</version.hibernate.validator>
+        <version.hibernate.validator>5.0.1.Final</version.hibernate.validator>
+        <!--<version.hibernate.validator>5.2.2.Final</version.hibernate.validator>-->
         <version.glassfish>4.0</version.glassfish>
         <version.jersey>2.3.1</version.jersey>
         <version.eclipselink>2.5.1</version.eclipselink>
@@ -94,6 +95,12 @@
                 <version>${version.weld}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.jboss.weld.se</groupId>
+                <artifactId>weld-se</artifactId>
+                <version>${version.weld}</version>
+            </dependency>
+
             <!-- Bean Validation -->
             <dependency>
                 <groupId>org.hibernate</groupId>
@@ -102,11 +109,11 @@
             </dependency>
 
             <!-- EL -->
-            <!--<dependency>-->
-            <!--<groupId>org.glassfish</groupId>-->
-            <!--<artifactId>javax.el</artifactId>-->
-            <!--<version>${version.el}</version>-->
-            <!--</dependency>-->
+            <dependency>
+                <groupId>org.glassfish</groupId>
+                <artifactId>javax.el</artifactId>
+                <version>${version.el}</version>
+            </dependency>
 
             <!-- JPA-->
             <dependency>

@@ -20,8 +20,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Retention(RUNTIME)
 @Documented
 public @interface ZipCode {
-    //    String message() default "{com.github.jmetzz.beanValidation.constraints.ZipCode.message}";
-    String message() default "wrong zip code";
+    String message() default "{com.github.jmetzz.beanValidation.constraints.ZipCode.message}";
 
     Class<?>[] groups() default {};
 
