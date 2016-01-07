@@ -7,8 +7,13 @@ import com.github.jmetzz.beanValidation.constraints.ZipCode;
 import com.github.jmetzz.beanValidation.pojo.Address;
 import com.github.jmetzz.beanValidation.pojo.Person;
 import com.github.jmetzz.beanValidation.service.PersonBuilder;
+import org.jglue.cdiunit.CdiRunner;
 import org.joda.time.DateTime;
-import org.junit.*;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
@@ -25,6 +30,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by Jean Metz on 11-Nov-15.
  */
+@RunWith(CdiRunner.class)
 public class ValidationProgramaticallyTest {
 
     private static ValidatorFactory factory;
@@ -272,7 +278,7 @@ public class ValidationProgramaticallyTest {
 
 
     @Test
-    @Ignore
+    //@Ignore
     /** FIXME
      * This test is marked as Ignore due to failure in
      * injecting the ZipCodeChecker into ZipCodeValidator,
