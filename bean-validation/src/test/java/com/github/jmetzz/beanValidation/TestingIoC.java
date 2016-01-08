@@ -1,31 +1,33 @@
 package com.github.jmetzz.beanValidation;
 
+import com.github.jmetzz.beanValidation.pojo.Dummy;
 import org.jglue.cdiunit.CdiRunner;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import javax.inject.Inject;
-import java.awt.print.Book;
+
+import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
+
 
 /**
  * Created by Jean Metz.
  * <p>
- * <p>
- * This is an attempt to run JUnit with CDI
- * NOT WORKING YET
+ * JUnit with CDI using jGlue
  */
-@Ignore
-//@RunWith(WeldJUnit4Runner.class)
 @RunWith(CdiRunner.class)
 public class TestingIoC {
 
     @Inject
-    private Book book;
+    private Dummy dummy;
+
 
     @Test
-    public void isNull() {
-        System.out.println(book == null);
+    public void validateInjection() {
+
+        assertThat(dummy).isNotNull();
+        dummy.setName("Isaac Newton");
+        System.out.println(dummy);
     }
 
 }

@@ -7,13 +7,8 @@ import com.github.jmetzz.beanValidation.constraints.ZipCode;
 import com.github.jmetzz.beanValidation.pojo.Address;
 import com.github.jmetzz.beanValidation.pojo.Person;
 import com.github.jmetzz.beanValidation.service.PersonBuilder;
-import org.jglue.cdiunit.CdiRunner;
 import org.joda.time.DateTime;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.*;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
@@ -30,8 +25,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by Jean Metz on 11-Nov-15.
  */
-@RunWith(CdiRunner.class)
-public class ValidationProgramaticallyTest {
+public class ValidationWithoutIoC {
 
     private static ValidatorFactory factory;
     private static Validator validator;
@@ -278,7 +272,7 @@ public class ValidationProgramaticallyTest {
 
 
     @Test
-    //@Ignore
+    @Ignore
     /** FIXME
      * This test is marked as Ignore due to failure in
      * injecting the ZipCodeChecker into ZipCodeValidator,
@@ -286,6 +280,13 @@ public class ValidationProgramaticallyTest {
      * to specific formation rules, not only a simple
      * expression that checks whether the given code
      * is only made of numbers, for example.
+     *
+     * This can be done with jGlue CdiRunner or Arquillian
+     *
+     * So this test should be done with IoC enabled.
+     * Check {@link ValidationWithJGlue} {@link TestingIoC}.
+     *
+     *
      */
     public void shouldFailBecauseInvalidZipCode() {
 

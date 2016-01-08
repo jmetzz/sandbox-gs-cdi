@@ -8,7 +8,7 @@ import javax.validation.ConstraintValidatorContext;
  * Created by Jean Metz on 11-Nov-15.
  */
 public class ExactSizeValidator implements ConstraintValidator<ExactSize, CharSequence> {
-    int size;
+    private int size;
 
     @Override
     public void initialize(ExactSize annotation) {

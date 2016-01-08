@@ -27,8 +27,8 @@
         <!-- Java EE -->
         <version.javaee>7.0</version.javaee>
         <version.weld>3.0.0.Alpha14</version.weld> <!--<version.weld>2.0.1.Final</version.weld>-->
-        <version.hibernate.validator>5.0.1.Final</version.hibernate.validator>
-        <!--<version.hibernate.validator>5.2.2.Final</version.hibernate.validator>-->
+        <!--<version.hibernate.validator>5.0.1.Final</version.hibernate.validator>-->
+        <version.hibernate.validator>5.2.2.Final</version.hibernate.validator>
         <version.glassfish>4.0</version.glassfish>
         <version.jersey>2.3.1</version.jersey>
         <version.eclipselink>2.5.1</version.eclipselink>

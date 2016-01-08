@@ -71,6 +71,7 @@
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
         </dependency>
+
         <dependency>
             <groupId>com.github.jmetzz.sandbox-gs-jee</groupId>
             <artifactId>bean-validation</artifactId>
