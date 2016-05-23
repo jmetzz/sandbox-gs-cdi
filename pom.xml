@@ -17,6 +17,7 @@
         <module>timer-scheduler</module>
         <module>jpa-persistence</module>
         <module>jsf-lab</module>
+        <module>ozark-mvc-lab</module>
     </modules>
 
     <properties>
