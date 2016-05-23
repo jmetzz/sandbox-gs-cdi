@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="layout.xhtml">
+
+    <f:metadata>
+        <f:viewParam name="id" value="#{cardsController.card.id}"/>
+        <f:viewAction action="#{cardsController.doFindCardById}"/>
+    </f:metadata>
+
+    <ui:define name="title">View a card</ui:define>
+
+    <ui:define name="content">
+
+        <h:panelGrid columns="2">
+            <h:outputLabel value="Word : "/>
+            <h:outputText value="#{cardsController.card.word}"/>
+
+            <h:outputLabel value="Language : "/>
+            <h:outputText value="#{cardsController.card.language}"/>
+
+            <h:outputLabel value="Description : "/>
+            <h:outputText value="#{cardsController.card.description}" cols="16" rows="3"/>
+
+
+        </h:panelGrid>
+
+    </ui:define>
+
+</ui:composition>
+</html>

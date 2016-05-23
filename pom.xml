@@ -16,6 +16,7 @@
         <module>bean-validation</module>
         <module>timer-scheduler</module>
         <module>jpa-persistence</module>
+        <module>jsf-lab</module>
     </modules>
 
     <properties>
