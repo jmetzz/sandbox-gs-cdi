@@ -1,4 +1,4 @@
-package com.github.jmetzz.demo;
+package com.github.jmetzz.flashcard;
 
 import javax.enterprise.inject.Produces;
 import javax.persistence.EntityManager;

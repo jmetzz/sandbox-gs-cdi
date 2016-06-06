@@ -1,7 +1,7 @@
-package com.github.jmetzz.demo;
+package com.github.jmetzz.flashcard;
 
-import com.github.jmetzz.demo.model.Flashcard;
-import com.github.jmetzz.demo.model.Language;
+import com.github.jmetzz.flashcard.model.Flashcard;
+import com.github.jmetzz.flashcard.model.Language;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.sql.DataSourceDefinition;
@@ -33,7 +33,7 @@ public class DataLoader {
         flashcardEJB.createFlashcard(new Flashcard("Dally", Language.ENGLISH, "to act playfully"));
         flashcardEJB.createFlashcard(new Flashcard("ramshackle", Language.ENGLISH, "appearing ready to collapse; carelessly or loosely constructed"));
 
-        logger.info("&&&&&&&&&&&&&& Inserted " + flashcardEJB.findAllCards().size() + " Books");
+        logger.info("&&&&&&&&&&&&&& Inserted " + flashcardEJB.findAllCards().size() + " Cards");
     }
 
 }

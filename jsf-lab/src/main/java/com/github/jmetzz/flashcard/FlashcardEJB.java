@@ -1,10 +1,10 @@
-package com.github.jmetzz.demo;
+package com.github.jmetzz.flashcard;
 
 /**
  * Created by Jean Metz.
  */
 
-import com.github.jmetzz.demo.model.Flashcard;
+import com.github.jmetzz.flashcard.model.Flashcard;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
