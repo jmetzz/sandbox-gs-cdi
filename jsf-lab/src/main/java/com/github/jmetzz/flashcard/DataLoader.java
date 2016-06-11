@@ -33,7 +33,7 @@ public class DataLoader {
         flashcardEJB.createFlashcard(new Flashcard("Dally", Language.ENGLISH, "to act playfully"));
         flashcardEJB.createFlashcard(new Flashcard("ramshackle", Language.ENGLISH, "appearing ready to collapse; carelessly or loosely constructed"));
 
-        logger.info("&&&&&&&&&&&&&& Inserted " + flashcardEJB.findAllCards().size() + " Cards");
+        logger.info("Inserted " + flashcardEJB.findAllCards().size() + " Cards");
     }
 
 }
