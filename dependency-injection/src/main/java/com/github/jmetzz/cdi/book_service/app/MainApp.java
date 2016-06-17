@@ -1,7 +1,7 @@
-package com.github.jmetzz.cdi.app;
+package com.github.jmetzz.cdi.book_service.app;
 
-import com.github.jmetzz.cdi.pojo.Book;
-import com.github.jmetzz.cdi.service.BookService;
+import com.github.jmetzz.cdi.book_service.pojo.Book;
+import com.github.jmetzz.cdi.book_service.service.BookService;
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
 

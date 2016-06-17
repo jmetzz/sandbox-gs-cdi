@@ -1,9 +1,9 @@
-package com.github.jmetzz.cdi.service.mock;
+package com.github.jmetzz.cdi.book_service.service.mock;
 
 
-import com.github.jmetzz.cdi.service.annotations.Loggable;
-import com.github.jmetzz.cdi.service.annotations.ThirteenDigits;
-import com.github.jmetzz.cdi.service.generators.NumberGenerator;
+import com.github.jmetzz.cdi.book_service.service.annotations.Loggable;
+import com.github.jmetzz.cdi.book_service.service.annotations.ThirteenDigits;
+import com.github.jmetzz.cdi.book_service.service.generators.NumberGenerator;
 
 import javax.enterprise.inject.Alternative;
 import javax.inject.Inject;
@@ -15,10 +15,6 @@ import java.util.logging.Logger;
  */
 
 
-/* FIXME Jean Metz
-- move this class to test package
-- use some framework to test cdi, such as Arquillian
- */
 @Alternative
 @ThirteenDigits
 public class MockGenerator implements NumberGenerator {

@@ -1,4 +1,4 @@
-package com.github.jmetzz.cdi.service.producers;
+package com.github.jmetzz.cdi.book_service.service.producers;
 
 import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;

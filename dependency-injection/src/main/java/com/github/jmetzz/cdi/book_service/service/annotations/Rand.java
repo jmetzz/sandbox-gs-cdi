@@ -1,4 +1,4 @@
-package com.github.jmetzz.cdi.service.annotations;
+package com.github.jmetzz.cdi.book_service.service.annotations;
 
 import javax.inject.Qualifier;
 import java.lang.annotation.Retention;

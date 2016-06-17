@@ -63,7 +63,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>com.github.jmetzz.cdi.app.MainApp</mainClass>
+                    <mainClass>com.github.jmetzz.cdi.book_service.app.MainApp</mainClass>
                 </configuration>
             </plugin>
         </plugins>

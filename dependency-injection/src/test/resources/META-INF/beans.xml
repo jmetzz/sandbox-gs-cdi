@@ -5,4 +5,10 @@
        version="1.1" bean-discovery-mode="all">
 
 
+    <alternatives>
+        <class>
+            com.github.jmetzz.cdi.book_service.service.mock.MockGenerator
+        </class>
+    </alternatives>
+
 </beans>

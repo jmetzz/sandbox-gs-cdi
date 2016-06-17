@@ -1,4 +1,4 @@
-package com.github.jmetzz.cdi.pojo;
+package com.github.jmetzz.cdi.book_service.pojo;
 
 import com.google.common.base.MoreObjects;
 

@@ -1,10 +1,10 @@
-package com.github.jmetzz.cdi.service;
+package com.github.jmetzz.cdi.book_service.service;
 
 
-import com.github.jmetzz.cdi.pojo.Book;
-import com.github.jmetzz.cdi.service.annotations.Loggable;
-import com.github.jmetzz.cdi.service.annotations.ThirteenDigits;
-import com.github.jmetzz.cdi.service.generators.NumberGenerator;
+import com.github.jmetzz.cdi.book_service.pojo.Book;
+import com.github.jmetzz.cdi.book_service.service.annotations.Loggable;
+import com.github.jmetzz.cdi.book_service.service.annotations.ThirteenDigits;
+import com.github.jmetzz.cdi.book_service.service.generators.NumberGenerator;
 
 import javax.inject.Inject;
 

@@ -1,9 +1,9 @@
-package com.github.jmetzz.cdi.service.generators;
+package com.github.jmetzz.cdi.book_service.service.generators;
 
 
-import com.github.jmetzz.cdi.service.annotations.Loggable;
-import com.github.jmetzz.cdi.service.annotations.Rand;
-import com.github.jmetzz.cdi.service.annotations.ThirteenDigits;
+import com.github.jmetzz.cdi.book_service.service.annotations.Loggable;
+import com.github.jmetzz.cdi.book_service.service.annotations.Rand;
+import com.github.jmetzz.cdi.book_service.service.annotations.ThirteenDigits;
 
 import javax.inject.Inject;
 import java.util.logging.Logger;
