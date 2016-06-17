@@ -9,29 +9,70 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-
     <artifactId>jsf-lab</artifactId>
     <name>jsf-lab</name>
     <description>jsf-lab (Flashcard application)</description>
     <packaging>war</packaging>
 
+    <properties>
+        <version.maven.embedded.glassfish.plugin>3.1.2.2</version.maven.embedded.glassfish.plugin>
+
+        <!--Version 4.0 doen't work. There is a issue on Jira related to this bug. -->
+        <!--<version.maven.embedded.glassfish.plugin>4.0</version.maven.embedded.glassfish.plugin>-->
+    </properties>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>maven.java.net</id>
+            <name>Java.net Maven2 Repository</name>
+            <url>http://download.java.net/maven/2</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>glassfish-repository</id>
+            <name>Java.net Repository for Glassfish</name>
+            <url>http://download.java.net/maven/glassfish</url>
+        </pluginRepository>
+    </pluginRepositories>
+
     <build>
         <plugins>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${version.maven.compiler.plugin}</version>
-                <configuration>
-                    <source>${version.java}</source>
-                    <target>${version.java}</target>
-                </configuration>
-            </plugin>
-
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>${version.maven.war.plugin}</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.glassfish.embedded</groupId>
+                <artifactId>maven-embedded-glassfish-plugin</artifactId>
+                <version>${version.maven.embedded.glassfish.plugin}</version>
+                <!--<version>3.1.2.2</version>-->
+
+                <configuration>
+                    <app>target/${project.artifactId}-${project.version}.war</app>
+                    <port>8282</port>
+                    <contextRoot>cards</contextRoot>
+                    <name>flashcards-app</name>
+
+                    <autoDelete>true</autoDelete>
+                    <configFile>C:\Apps\glassfish4\glassfish\domains\domain1\config\domain.xml</configFile>
+
+                </configuration>
+
+                <dependencies>
+                    <dependency>
+                        <groupId>org.glassfish.main.extras</groupId>
+                        <artifactId>glassfish-embedded-all</artifactId>
+                        <version>${version.glassfish}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.glassfish.main.common</groupId>
+                        <artifactId>simple-glassfish-api</artifactId>
+                        <version>${version.glassfish}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
 
         </plugins>
@@ -56,8 +97,6 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
         </dependency>
-
-
     </dependencies>
 
 </project>
