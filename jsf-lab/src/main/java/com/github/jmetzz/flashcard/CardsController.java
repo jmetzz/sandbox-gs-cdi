@@ -8,6 +8,8 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import org.apache.log4j.Logger;
+
 
 /**
  * Created by Jean Metz.
@@ -15,6 +17,8 @@ import javax.inject.Named;
 @Named
 @RequestScoped
 public class CardsController {
+
+    private static Logger logger = Logger.getLogger(CardsController.class.getName());
 
     @Inject
     private FlashcardEJB flashcardEJB;
@@ -29,11 +33,15 @@ public class CardsController {
                         "Flashcard created",
                         "The Flashbard for word " + card.getWord() + " has been created with id=" + card.getId()));
 
+        logger.info("Flashcard created: " + card);
+
         return "newFlashcard.xhtml";
     }
 
     public void doFindCardById() {
+        logger.info("Card Id to fetch: " + card.getId());
         card = flashcardEJB.findCardById(card.getId());
+        logger.info("Flashcard fetched: " + card);
     }
 
     public Flashcard getCard() {

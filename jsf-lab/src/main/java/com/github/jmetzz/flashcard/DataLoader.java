@@ -8,7 +8,8 @@ import javax.annotation.sql.DataSourceDefinition;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
 import javax.inject.Inject;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
+
 
 /**
  * Created by Jean Metz.
@@ -19,13 +20,14 @@ import java.util.logging.Logger;
 @DataSourceDefinition(name = "java:global/jdbc/jsfLabDS",
         className = "org.apache.derby.jdbc.EmbeddedDriver",
         url = "jdbc:derby:memory:jsfLabDB;create=true;user=app;password=app"
+
 )
 public class DataLoader {
 
     @Inject
     private FlashcardEJB flashcardEJB;
 
-    private Logger logger = Logger.getLogger(DataLoader.class.getName());
+    private static Logger logger = Logger.getLogger(DataLoader.class.getName());
 
     @PostConstruct
     private void createDummyData() {

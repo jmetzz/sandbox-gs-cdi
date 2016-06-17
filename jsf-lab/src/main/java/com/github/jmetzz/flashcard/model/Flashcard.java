@@ -15,7 +15,6 @@ public class Flashcard {
     @GeneratedValue
     private long id;
 
-
     @NotNull
     @Size(min = 2, max = 50)
     @Column(nullable = false)
