@@ -17,7 +17,18 @@ jms/javaee7/Topic
 jms/javaee7/ConnectionFactory
 
 After building with Maven, deploy the MDB with the following command
-> asadmin deploy chapter16-MDB-1.0.jar
+> asadmin deploy <component name>.jar
 
 If the deployment is successful, the following command should return the name of the deployed jar
 > asadmin list-components
+
+
+Run the examples with the appclient commannd :
+
+appclient -client chapter13-1.0.jar
+If you need to empty a destination (flush all messages), this is what you need to do (the name of the destination is the physical name, not the JNDI name) :
+
+asadmin flush-jmsdest --desttype queue jms_javaee7_Queue asadmin flush-jmsdest --desttype topic jms_javaee7_Topic
+
+
+!!! Warning !!! These examples use the new lookup attribute of the @Resource annotation (Commons Annotation 1.1). Because the 1.0 is bundled into the JDK, you need to endorse it : copy the %M2_REPO%\org\glassfish\javax.annotation\${glassfish-version}\javax.annotation-${glassfish-version}.jar to the %JAVA_HOME%\lib\endorsed (in the JRE_HOME if needed too)
