@@ -3,6 +3,7 @@ package com.github.jmetzz.jms_lab.simplified_api_demo;
 
 import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
+import javax.jms.JMSConsumer;
 import javax.jms.JMSContext;
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -25,8 +26,9 @@ public class JmsTextMsgConsumer {
         // sends the message
         try (JMSContext context = connectionFactory.createContext()) {
             System.out.println("\nInfinite loop. Waiting for a message...");
+            JMSConsumer consumer = context.createConsumer(queue);
             while (true) {
-                System.out.println(context.createConsumer(queue).receiveBody(String.class));
+                System.out.println(consumer.receiveBody(String.class));
             }
         }
 

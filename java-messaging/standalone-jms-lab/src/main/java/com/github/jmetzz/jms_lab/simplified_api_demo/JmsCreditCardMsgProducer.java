@@ -24,14 +24,14 @@ public class JmsCreditCardMsgProducer {
 
         // Looks up the administered objects
         ConnectionFactory connectionFactory = (ConnectionFactory) jndiContext.lookup("jms/javaee7/ConnectionFactory");
-        Destination topic = (Destination) jndiContext.lookup("jms/javaee7/Queue");
+        Destination queue = (Destination) jndiContext.lookup("jms/javaee7/Queue");
 
         CreditCard creditCard = new CreditCard("12345", "2020-01-01", 123, CreditCardType.MASTER_CARD);
 
         // Loops to receive the messages
         System.out.println("\nInfinite loop. Waiting for a message...");
         try (JMSContext jmsContext = connectionFactory.createContext()) {
-            jmsContext.createProducer().setProperty("validate", true).send(topic, creditCard);
+            jmsContext.createProducer().setProperty("validate", true).send(queue, creditCard);
             System.out.println("Credit card sent: " + creditCard);
         }
 

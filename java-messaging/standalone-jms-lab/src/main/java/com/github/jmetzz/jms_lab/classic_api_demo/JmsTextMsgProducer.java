@@ -16,8 +16,8 @@ public class JmsTextMsgProducer {
             Context jndiContext = new InitialContext();
 
             // Fetch administered resources
-            ConnectionFactory connectionFactory = (ConnectionFactory) jndiContext.lookup("jms/jmsLab/ConnectionFactory");
-            Destination queue = (Destination) jndiContext.lookup("jms/jmsLab/Queue");
+            ConnectionFactory connectionFactory = (ConnectionFactory) jndiContext.lookup("jms/javaee7/ConnectionFactory");
+            Destination queue = (Destination) jndiContext.lookup("jms/javaee7/Queue");
 
             Connection conn = connectionFactory.createConnection();
             Session session = conn.createSession(false, Session.AUTO_ACKNOWLEDGE);

@@ -12,22 +12,19 @@ import java.util.Date;
 
 public class JmsTextMsgProducer {
 
-    public static void main(String[] args) {
-        try {
-            // Gets the JNDI context
-            Context jndiContext = new InitialContext();
+    public static void main(String[] args) throws NamingException {
+        // Gets the JNDI context
+        Context jndiContext = new InitialContext();
 
-            // Fetch administered resources
-            ConnectionFactory connectionFactory = (ConnectionFactory) jndiContext.lookup("jms/javaee7/ConnectionFactory");
-            Destination queue = (Destination) jndiContext.lookup("jms/javaee7/Queue");
+        // Fetch administered resources
+        ConnectionFactory connectionFactory = (ConnectionFactory) jndiContext.lookup("jms/javaee7/ConnectionFactory");
+        Destination queue = (Destination) jndiContext.lookup("jms/javaee7/Queue");
 
-            // sends the message
-            try (JMSContext context = connectionFactory.createContext()) {
-                context.createProducer().send(queue, "Time now: " + new Date());
-            }
-        } catch (NamingException e) {
-            e.printStackTrace();
+        // sends the message
+        try (JMSContext context = connectionFactory.createContext()) {
+            context.createProducer().send(queue, "Time now: " + new Date());
         }
+
     }
 
 }
