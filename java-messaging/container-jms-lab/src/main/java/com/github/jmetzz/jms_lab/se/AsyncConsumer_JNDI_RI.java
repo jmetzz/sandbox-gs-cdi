@@ -1,7 +1,10 @@
-package jms_lab.demo.consumer.se;
+package com.github.jmetzz.jms_lab.se;
 
 
-import jms_lab.demo.pojo.CreditCard;
+
+
+
+import com.github.jmetzz.jms_lab.pojo.CreditCard;
 
 import javax.annotation.Resource;
 import javax.jms.*;
@@ -9,7 +12,7 @@ import javax.naming.NamingException;
 
 
 
-public class AsyncConsumerSE_JNDI_RI implements MessageListener {
+public class AsyncConsumer_JNDI_RI implements MessageListener {
 
     @Resource(lookup = "jms/javaee7/ConnectionFactory")
     private static ConnectionFactory connectionFactory;
@@ -20,7 +23,7 @@ public class AsyncConsumerSE_JNDI_RI implements MessageListener {
 
     public static void main(String[] args) throws NamingException {
         try(JMSContext context = connectionFactory.createContext()){
-            context.createConsumer(topic, "validate = true").setMessageListener(new AsyncConsumerSE_JNDI_RI());
+            context.createConsumer(topic, "validate = true").setMessageListener(new AsyncConsumer_JNDI_RI());
         }
     }
 

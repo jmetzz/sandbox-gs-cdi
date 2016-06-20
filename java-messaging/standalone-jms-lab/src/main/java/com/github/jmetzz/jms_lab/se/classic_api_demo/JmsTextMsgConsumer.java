@@ -1,4 +1,4 @@
-package com.github.jmetzz.jms_lab.classic_api_demo;
+package com.github.jmetzz.jms_lab.se.classic_api_demo;
 
 
 import javax.jms.*;

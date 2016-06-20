@@ -1,13 +1,17 @@
-package jms_lab.demo.producer;
+package com.github.jmetzz.jms_lab.container;
 
-import jms_lab.demo.pojo.CreditCard;
-import jms_lab.demo.pojo.CreditCardType;
+
+
+
+
+
+import com.github.jmetzz.jms_lab.pojo.CreditCard;
+import com.github.jmetzz.jms_lab.pojo.CreditCardType;
 
 import javax.annotation.Resource;
 import javax.ejb.Stateless;
 import javax.jms.ConnectionFactory;
 import javax.jms.JMSContext;
-import javax.jms.Queue;
 import javax.jms.Topic;
 
 @Stateless

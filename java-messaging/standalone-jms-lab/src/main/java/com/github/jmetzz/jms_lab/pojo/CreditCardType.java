@@ -1,4 +1,4 @@
-package jms_lab.demo.pojo;
+package com.github.jmetzz.jms_lab.pojo;
 
 /**
  * Created by Jean Metz.

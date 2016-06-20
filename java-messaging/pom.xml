@@ -11,9 +11,11 @@
 
     <artifactId>java-messaging</artifactId>
     <packaging>pom</packaging>
+
     <modules>
         <module>standalone-jms-lab</module>
         <module>container-jms-lab</module>
+        <module>mdb-demo</module>
     </modules>
 
 

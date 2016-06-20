@@ -1,8 +1,11 @@
-package jms_lab.demo.consumer.se;
+package com.github.jmetzz.jms_lab.se;
 
 
-import jms_lab.demo.pojo.CreditCard;
 
+
+
+
+import com.github.jmetzz.jms_lab.pojo.CreditCard;
 
 import javax.jms.*;
 import javax.naming.Context;
@@ -18,7 +21,7 @@ import javax.jms.Message;
  * MDBs use event model to handle message arrival by defining the callback onMessage,
  * which gets called every time a message is available to be handled.
  */
-public class AsyncConsumerSE implements MessageListener {
+public class AsyncConsumer implements MessageListener {
 
     public static void main(String[] args) throws NamingException {
         Context jndiContext = new InitialContext();
@@ -26,7 +29,7 @@ public class AsyncConsumerSE implements MessageListener {
         Destination topic = (Destination) jndiContext.lookup("jms/javaee7/Topic");
 
         try(JMSContext context = connectionFactory.createContext()){
-            context.createConsumer(topic, "validate = true").setMessageListener(new AsyncConsumerSE());
+            context.createConsumer(topic, "validate = true").setMessageListener(new AsyncConsumer());
         }
     }
 

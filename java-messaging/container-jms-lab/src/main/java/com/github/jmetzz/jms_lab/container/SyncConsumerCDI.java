@@ -1,6 +1,10 @@
-package jms_lab.demo.consumer.container.ejb;
+package com.github.jmetzz.jms_lab.container;
 
-import jms_lab.demo.pojo.CreditCard;
+
+
+
+
+import com.github.jmetzz.jms_lab.pojo.CreditCard;
 
 import javax.annotation.Resource;
 import javax.ejb.Stateless;
