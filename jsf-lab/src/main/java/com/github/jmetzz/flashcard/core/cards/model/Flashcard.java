@@ -1,4 +1,4 @@
-package com.github.jmetzz.flashcard.model;
+package com.github.jmetzz.flashcard.core.cards.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

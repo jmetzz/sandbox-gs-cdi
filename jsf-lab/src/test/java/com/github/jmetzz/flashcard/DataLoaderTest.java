@@ -29,7 +29,8 @@ public class DataLoaderTest {
             try {
 
                 /*The server provides a JNDI name for all deployed beans.
-                check the naming conventions at : http://docs.oracle.com/cd/E19798-01/821-1841/girgn/index.html*/
+                check the naming conventions at : http://docs.oracle.com/cd/E19798-01/821-1841/girgn/index.html
+                */
 
                 assertNotNull(ctx.lookup("java:global/classes/FlashcardEJB"));
                 assertNotNull(ctx.lookup("java:global/jdbc/jsfLabDS"));

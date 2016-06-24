@@ -1,14 +1,15 @@
-package com.github.jmetzz.flashcard;
+package com.github.jmetzz.flashcard.core.cards.control;
 
 
-import com.github.jmetzz.flashcard.model.Flashcard;
+import com.github.jmetzz.flashcard.FlashcardEngineEJB;
+import com.github.jmetzz.flashcard.core.cards.model.Flashcard;
+import org.apache.log4j.Logger;
 
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
-import org.apache.log4j.Logger;
 
 
 /**
@@ -21,7 +22,7 @@ public class CardsController {
     private static Logger logger = Logger.getLogger(CardsController.class.getName());
 
     @Inject
-    private FlashcardEJB flashcardEJB;
+    private FlashcardEngineEJB flashcardEJB;
     private Flashcard card = new Flashcard();
 
 

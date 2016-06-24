@@ -1,14 +1,15 @@
-package com.github.jmetzz.flashcard;
+package com.github.jmetzz.flashcard.core.cards.service;
 
-import com.github.jmetzz.flashcard.model.Flashcard;
-import com.github.jmetzz.flashcard.model.Language;
+import com.github.jmetzz.flashcard.FlashcardEngineEJB;
+import com.github.jmetzz.flashcard.core.cards.model.Flashcard;
+import com.github.jmetzz.flashcard.core.cards.model.Language;
+import org.apache.log4j.Logger;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.sql.DataSourceDefinition;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
 import javax.inject.Inject;
-import org.apache.log4j.Logger;
 
 
 /**
@@ -24,10 +25,9 @@ import org.apache.log4j.Logger;
 )
 public class DataLoader {
 
-    @Inject
-    private FlashcardEJB flashcardEJB;
-
     private static Logger logger = Logger.getLogger(DataLoader.class.getName());
+    @Inject
+    private FlashcardEngineEJB flashcardEJB;
 
     @PostConstruct
     private void createDummyData() {

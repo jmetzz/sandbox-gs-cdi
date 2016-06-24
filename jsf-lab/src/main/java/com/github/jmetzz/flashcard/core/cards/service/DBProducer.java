@@ -1,4 +1,4 @@
-package com.github.jmetzz.flashcard;
+package com.github.jmetzz.flashcard.core.cards.service;
 
 import javax.enterprise.inject.Produces;
 import javax.persistence.EntityManager;
