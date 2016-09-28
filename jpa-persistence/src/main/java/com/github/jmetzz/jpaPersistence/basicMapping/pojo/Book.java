@@ -39,6 +39,10 @@ public class Book {
     @Column(name = "NBOFPAGE")
     private Integer numberOfPages;
 
+    @Version
+    private Integer version;
+
+
     public Book() {
     }
 
@@ -96,6 +100,10 @@ public class Book {
 
     public void setNumberOfPages(Integer numberOfPages) {
         this.numberOfPages = numberOfPages;
+    }
+
+    public Integer getVersion() {
+        return version;
     }
 
     @Override
