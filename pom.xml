@@ -51,7 +51,7 @@
         <skipTests>false</skipTests>
         <skipITs>${skipTests}</skipITs>
         <skipUTs>${skipTests}</skipUTs>
-        <version.junit>4.12</version.junit>
+        <version.junit>4.13.1</version.junit>
         <version.mockito>1.10.19</version.mockito>
         <version.assertj>3.2.0</version.assertj>
         <version.xmlunit>1.4</version.xmlunit>
