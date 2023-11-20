@@ -39,7 +39,7 @@
         <version.json>1.0.2</version.json>
 
         <!-- Databases -->
-        <version.derby>10.14.2.0</version.derby>
+        <version.derby>10.17.1.0</version.derby>
         <version.mysql>8.0.28</version.mysql>
 
         <!-- Logs -->
